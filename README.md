@@ -5,20 +5,15 @@ Features:
 
  
 
-Buttons for social interaction:
+With this addon, 
+you will see a window with 3 different groups.
 
-- welcome guild members
+Guild, party and instance.
 
-- say goodbye to guild members
+The text templates for hello and goodbye are stored in each of these groups.
 
-- thank guild members
+To make it short, 
+if you click on Hi in the party section, 
+it will also write hi in the party.
 
-- congratulate guild members
-
-- welcome party members
-
-- say goodbye to party members
-
-- welcome instance party members
-
-- say goodbye to instance party members
+For more details just look at the pictures.
