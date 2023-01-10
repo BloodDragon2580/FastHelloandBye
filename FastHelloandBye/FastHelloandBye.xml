@@ -1,0 +1,59 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+  <Font name="FastHelloandBye_DisplayListFont" font="Interface\AddOns\FastHelloandBye\media\fonts\francois.TTF" virtual="true">
+    <Color r="1.0" g="0.82" b="0"/>
+		<Shadow>
+			<Offset>
+				<AbsDimension x="1" y="-1"/>
+			</Offset>
+			<Color r="0" g="0" b="0"/>
+		</Shadow>
+		<FontHeight>
+			<AbsValue val="12"/>
+		</FontHeight>
+	</Font>
+
+  <Button name="FastHelloandBye_DefaultButtonTemplate" inherits="UIPanelButtonTemplate" virtual="true">
+    <Size x="100" y="24" />
+<KeyValues>
+        <KeyValue key="backdropInfo" value="BACKDROP_DARK_DIALOG_32_32" type="global"/>
+        <KeyValue key="backdropColor" value="BLACK" type="global"/>
+        <KeyValue key="backdropBorderColor" value="WHITE" type="global"/>
+</KeyValues>
+    <Scripts>
+      <OnEnter function="FastHelloandBye_Button_OnEnter"/>
+      <OnLeave function="FastHelloandBye_Button_OnLeave"/>
+    </Scripts>
+  </Button>
+  <Button name="FastHelloandBye_DefaultIconButtonTemplate" inherits="UIPanelButtonTemplate" virtual="true">
+    <Size x="32" y="32" />
+    <Scripts>
+      <OnEnter function="FastHelloandBye_Button_OnEnter"/>
+      <OnLeave function="FastHelloandBye_Button_OnLeave"/>
+    </Scripts>
+  </Button>
+
+  <Texture name="FHAB_UIPanelButtonUpTexture" file="Interface\Buttons\UI-Panel-Button-Disabled" virtual="true">
+    <TexCoords left="0" right="0.625" top="0" bottom="0.6875"/>
+  </Texture>
+	<Texture name="FHAB_UIPanelButtonDownTexture" file="Interface\Buttons\UI-Panel-Button-Disabled-Down" virtual="true">
+		<TexCoords left="0" right="0.625" top="0" bottom="0.6875"/>
+	</Texture>
+	<Texture name="FHAB_UIPanelButtonHighlightTexture" file="Interface\Buttons\UI-Panel-Button-Highlight2" alphaMode="ADD" virtual="true">
+		<TexCoords left="0" right="0.625" top="0" bottom="0.6875"/>
+	</Texture>
+	<Button name="FHAB_UIPanelButtonTemplate" virtual="true">
+    <Size x="48" y="24" />
+		<ButtonText name="$parentText"/>
+		<NormalFont style="FastHelloandBye_DisplayListFont"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+		<NormalTexture inherits="FHAB_UIPanelButtonUpTexture"/>
+		<PushedTexture inherits="FHAB_UIPanelButtonDownTexture"/>
+		<DisabledTexture inherits="FHAB_UIPanelButtonUpTexture"/>
+		<HighlightTexture inherits="FHAB_UIPanelButtonHighlightTexture"/>
+    <Scripts>
+      <OnEnter function="FastHelloandBye_Button_OnEnter"/>
+      <OnLeave function="FastHelloandBye_Button_OnLeave"/>
+    </Scripts>
+	</Button>
+</Ui>
