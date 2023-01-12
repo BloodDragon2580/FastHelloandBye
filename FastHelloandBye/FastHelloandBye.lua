@@ -59,6 +59,8 @@ function FHABAddon_SendMessage(identifier, chatType, channel)
     messages = {strsplit(",", FHABAddon.db.profile.messages.party.greeting)}
   elseif identifier == "PartyFarewell" then
     messages = {strsplit(",", FHABAddon.db.profile.messages.party.farewell)}
+  elseif identifier == "PartyThanks" then
+    messages = {strsplit(",", FHABAddon.db.profile.messages.party.thanks)}
   elseif identifier == "InstanceGreeting" then
     messages = {strsplit(",", FHABAddon.db.profile.messages.instance.greeting)}
   elseif identifier == "InstanceFarewell" then
@@ -110,7 +112,7 @@ function FHABAddon_SetupMainFrame()
   FastHelloandBye:RegisterEvent("PLAYER_LOGIN")
   FastHelloandBye.title = FastHelloandBye:CreateFontString("FastHelloandBye_Title", "OVERLAY", "FastHelloandBye_DisplayListFont")
   FastHelloandBye.title:SetPoint("TOP", 0, -16)
-  FastHelloandBye.title:SetText("Make people greet again!")
+  FastHelloandBye.title:SetText("FastHelloandBye!")
   FastHelloandBye.close = CreateFrame("Button","FastHelloandBye_Close", FastHelloandBye, "UIPanelCloseButton")
   FastHelloandBye.close:SetPoint("TOPRIGHT", -3, -3)
   FastHelloandBye:Show()
@@ -156,6 +158,10 @@ function FHABAddon_SetupButtons()
   if FHABAddon.db.profile.config.party.farewell then
     buttonCount = buttonCount + 1
     addButton(buttonsFrame, "PartyFarewell", "PARTY", "p", fontParty, buttonCount)
+  end
+  if FHABAddon.db.profile.config.party.thanks then
+    buttonCount = buttonCount + 1
+    addButton(buttonsFrame, "PartyThanks", "PARTY", "p", fontParty, buttonCount)
   end
 
   local infoInstance = ChatTypeInfo["INSTANCE_CHAT"]
@@ -247,7 +253,7 @@ function FHABAddon:ChatCommands(msg)
 end
 
 function FHABAddon:OnInitialize()
-  self.db = LibStub("AceDB-3.0"):New("FastHelloandByeDB", _defaultConfig, true) -- by default all chars use default profile
+  self.db = LibStub("AceDB-3.0"):New("FastHelloandByeDB", _defaultConfig, true)
   self.needReload = false
 
   self.db.RegisterCallback(self, "OnProfileChanged", "DoReload");

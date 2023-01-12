@@ -85,7 +85,6 @@ local function createCheckbox(parent, name, label, description, hideLabel, onCli
   check.tooltipText = label
   check.tooltipRequirement = description
 
-  -- events
   check:SetScript("OnClick", function(self)
     local tick = self:GetChecked()
     onClick(self, tick and true or false)
@@ -130,7 +129,6 @@ function FHABAddon_SetupOptionsUI()
 	title:SetPoint("TOPLEFT", 10, -10)
 	title:SetText(L["FHAB_Title"])
 
-	-- layout
 	do
 		local layoutLabel = createLabel(FHABAddon.optionsFrame, "layoutLabel", L["FHAB_SetLayout"])
 		layoutLabel:SetPoint("TOPLEFT", title, 0, -30)
@@ -374,8 +372,42 @@ function FHABAddon_SetupOptionsUI()
 	end
 
 	do
+		local partyThanksLabel = createLabel(FHABAddon.optionsFrame, "partyThanksLabel", L["FHAB_PartyThanks"])
+		partyThanksLabel:SetPoint("TOPLEFT", partyGreetingLabel, 0, -70)
+
+		local partyThanksCheckbox = createCheckbox(
+			FHABAddon.optionsFrame,
+			"FHAB_PartyThanks_Checkbox",
+			L["FHAB_PartyThanks"],
+			L["FHAB_EnableButton_Desc"],
+			true,
+			function(self, value)
+				FHABAddon.db.profile.config.party.thanks = value
+				FHABAddon.needReload = true
+			end
+		)
+		partyThanksCheckbox:SetChecked(FHABAddon.db.profile.config.party.thanks)
+		partyThanksCheckbox:SetPoint("TOPLEFT", partyThanksLabel, 0, -14)
+
+		local partyThanksEditBox = createEditbox(
+			FHABAddon.optionsFrame,
+			"FHAB_PartyThanks_Editbox",
+			L["FHAB_PartyThanks"],
+			L["FHAB_PartyThanks_Desc"],
+			240,
+			30,
+			false,
+			function(self)
+				FHABAddon.db.profile.messages.party.thanks = self:GetText()
+			end
+		)
+		partyThanksEditBox:SetText(FHABAddon.db.profile.messages.party.thanks)
+		partyThanksEditBox:SetPoint("TOPLEFT", partyThanksCheckbox, 30, 3)
+	end
+
+	do
 		local instanceGreetingLabel = createLabel(FHABAddon.optionsFrame, "instanceGreetingLabel", L["FHAB_InstanceGreeting"])
-		instanceGreetingLabel:SetPoint("TOPLEFT", partyGreetingLabel, 0, -70)
+		instanceGreetingLabel:SetPoint("TOPLEFT", partyThanksLabel, 0, -70)
 
 	  local instanceGreetingCheckbox = createCheckbox(
 	    FHABAddon.optionsFrame,
@@ -455,23 +487,23 @@ end
 function FHABAddon_ApplyLayout(layout)
   if layout == _SingleRowLayout then
     FHABAddon.db.profile.config.layout = _SingleRowLayout
-    FHABAddon.db.profile.config.buttonsPerRow = 8
+    FHABAddon.db.profile.config.buttonsPerRow = 9
     FastHelloandBye_Title:SetText(L["FHAB_Title"])
-    FastHelloandBye:SetSize(416, 72)
+    FastHelloandBye:SetSize(465, 72)
   elseif layout == _SingleColumnLayout then
     FHABAddon.db.profile.config.layout = _SingleColumnLayout
     FHABAddon.db.profile.config.buttonsPerRow = 1
     FastHelloandBye_Title:SetText(L["FHAB_Title_Short"])
-    FastHelloandBye:SetSize(80, 240)
+    FastHelloandBye:SetSize(80, 265)
   elseif layout == _TwoColumnsLayout then
     FHABAddon.db.profile.config.layout = _TwoColumnsLayout
     FHABAddon.db.profile.config.buttonsPerRow = 2
     FastHelloandBye_Title:SetText(L["FHAB_Title_Short"])
-    FastHelloandBye:SetSize(128, 144)
+    FastHelloandBye:SetSize(128, 165)
   else
     FHABAddon.db.profile.config.layout = _DefaultLayout
-    FHABAddon.db.profile.config.buttonsPerRow = 4
+    FHABAddon.db.profile.config.buttonsPerRow = 5
     FastHelloandBye_Title:SetText(L["FHAB_Title"])
-    FastHelloandBye:SetSize(224, 96)
+    FastHelloandBye:SetSize(270, 96)
   end
 end

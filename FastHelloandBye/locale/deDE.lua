@@ -12,7 +12,7 @@ L["FHAB_No"] = "Nein"
 L["FHAB_PerformReload"] = "Das Interface muss aktualisiert werden, damit FastHelloandBye weiterhin ordnungsgemäß funktioniert.\n\nMöchtest du das UI jetzt neu laden?"
 L["FHAB_NotReloaded"] = "Das Interface wurde nicht neu geladen. Deine Änderungen sind noch nicht gültig."
 
-L["FHAB_MMBTooltipTitle"] = "Make people greet again!"
+L["FHAB_MMBTooltipTitle"] = "Fast Hello and Bye!"
 L["FHAB_MMBTooltipInfo"] = "\124cffFF4500Linksklick:\124r Zeige/verstecke das Fenster.\n\124cffFF4500Rechtsklick:\124r Öffne das Optionsmenü."
 
 L["FHAB_EnableButton_Desc"] = "Schaltfläche aktivieren/deaktivieren"
@@ -55,6 +55,11 @@ L["FHAB_PartyFarewell"] = "Verabschiedung für Gruppe"
 L["FHAB_PartyFarewell_Button"] = "Bye"
 L["FHAB_PartyFarewell_Button_Tooltip"] = "Verabschiedung für Gruppe"
 L["FHAB_PartyFarewell_Desc"] = "Die verschiedenen Texte, die für die Verabschiedung von Gruppenmitgliedern genutzt werden."
+
+L["FHAB_PartyThanks"] = "Danke für Gruppe"
+L["FHAB_PartyThanks_Button"] = "Thx"
+L["FHAB_PartyThanks_Button_Tooltip"] = "Danke für Gruppe"
+L["FHAB_PartyThanks_Desc"] = "Die verschiedenen Texte, die für die Danksagungen an Gruppenmitgliedern genutzt werden."
 
 L["FHAB_InstanceGreeting"] = "Begrüßung für Instanz"
 L["FHAB_InstanceGreeting_Button"] = "Hi"

@@ -7,7 +7,7 @@ local _defaultConfig = {
     },
     config = {
       layout = "Default",
-      buttonsPerRow = 4,
+      buttonsPerRow = 5,
       guild = {
         greeting = true,
         farewell = true,
@@ -17,6 +17,7 @@ local _defaultConfig = {
       party = {
         greeting = true,
         farewell = true,
+        thanks = true,
       },
       instance = {
         greeting = true,
@@ -33,6 +34,7 @@ local _defaultConfig = {
       party = {
         greeting = "Hello",
         farewell = "Bye",
+        thanks = "Thanks",
       },
       instance = {
         greeting = "Hello",
