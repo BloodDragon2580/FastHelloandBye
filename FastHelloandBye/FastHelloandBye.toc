@@ -1,4 +1,4 @@
-## Interface: 100007
+## Interface: 100100
 ## Title:|cffd6266cFastHelloandBye|r
 ## Notes: This addon adds a command window for social interactions.
 ## Author: BloodDragon2580
