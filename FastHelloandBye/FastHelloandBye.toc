@@ -2,7 +2,7 @@
 ## Title:|cffd6266cFastHelloandBye|r
 ## Notes: This addon adds a command window for social interactions.
 ## Author: BloodDragon2580
-## Version: 1.9
+## Version: 2.0
 ## DefaultState: enabled
 ## SavedVariables: FastHelloandByeDB
 ## IconTexture: Interface\AddOns\FastHelloandBye\Media\Texture\logo
